@@ -1,39 +1,39 @@
 # RAG (Retrieval-Augmented Generation) – Node.js
-Prosty projekt RAG napisany w node JS z uzyciem modelu OpenAI.
-Pozwala zadawać pytania i odpowadać na podstawie dostarczonego dokumentu.
+A simple RAG project written in Node.js using an OpenAI model.
+It allows you to ask questions and get answers based on a provided document.
 
 
-## Funkcjonalności
-- Proste czyszczenie tekstu
-- Generowanie chunków wraz z overlapem
-- Reprezentacja chunków jako wektory
-- Reprezentacja zapytania uzytkownika jako wektor
-- Obliczenie podobieństwa cosinusowego aby znaleźć chunki z tekstu podobne do zapytania uzytkownika.
-- Tworzenie promptu z zapytaniem oraz wybranymi fragmentami tekstu i przesłanie do modelu aby uzyskać odpowiedź.
+## Features
+- Basic text cleaning
+- Chunk generation with overlap
+- Representing chunks as vectors
+- Representing the user query as a vector
+- Calculating cosine similarity to find text chunks similar to the user’s query
+- Creating a prompt from the query and selected text fragments and sending it to the model to obtain an answer
 
-## Wymagania
+## Requirements
 - Node.js >= 18
-- Konto OpenAI oraz klucz API (ustawiony jako zmienna środowiskowa `OPENAI_API_KEY`)
+- OpenAI account and API key (set as the OPENAI_API_KEY environment variable)
 
-## Instalacja
+## Installation
 ```bash
 npm install
 ```
 
-## Użycie
-1. Umieść plik tekstowy (np. "zemsta.txt") w katalogu `src/`.
-2. Uruchom aplikację:
+## Usage
+1. Place a text file (e.g., "zemsta.txt") in the `src/`.
+2. Run the application:
 ```bash
 node src/app.js
 ```
-3. Wprowadź pytanie dotyczące treści dokumentu, gdy pojawi się odpowiedni komunikat.
+3. Enter a question related to the document content when prompted.
 
-## Pliki
-- `src/app.js` – główny plik aplikacji
-- `src/zemsta.txt` – przykładowy dokument tekstowy
+## Files
+- `src/app.js` – main application file
+- `src/zemsta.txt` – example text document
 
-## Działanie
-Aplikacja dzieli dokument na fragmenty, generuje embeddingi, a następnie na podstawie zapytania użytkownika wyszukuje najbardziej pasujące fragmenty i generuje odpowiedź, korzystając wyłącznie z tych fragmentów.
+## How It Works
+The application splits the document into chunks, generates embeddings, and then—based on the user’s query—retrieves the most relevant chunks and generates an answer using only those fragments.
 
-## Licencja
+## License
 MIT
